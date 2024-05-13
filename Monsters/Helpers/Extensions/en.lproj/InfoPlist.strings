@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Monsters
+
+  Created by Василий Тихонов on 10.01.2024.
+  
+*/
+NSLocationAlwaysAndWhenInUseUsageDescription = "This is necessary to display your geolocation location on the map, otherwise you will not be able to see yourself and catch monsters.";
+NSLocationWhenInUseUsageDescription = "This is necessary to display your geolocation location on the map, otherwise you will not be able to see yourself and catch monsters.";

@@ -1,0 +1,58 @@
+/* 
+  Localizable.strings
+  Monsters
+
+  Created by Василий Тихонов on 23.06.2023.
+  
+*/
+"This is necessary to display your geolocation on the map" = "Это необходимо для отображения вашего геолокационного местоположения на карте";
+"My Collection" = "Моя Коллекция";
+"I'm here" = "Я тут";
+"Try to catch" = "Попробовать поймать";
+"Level " = "Уровень ";
+ " You haven't caught the monsters in your collection yet. " = " Вы еще не поймали монстров в свою коллекцию. ";
+"Your geolocation service is turned off" = "У вас выключена служба геолакации";
+"Enable it in the settings" = "Включите её в настройках";
+"You have turned off geolocation" = "Вы выключили геолакацию";
+"Go to settings to enable" = "Перейдите в настройки чтобы включить";
+"Warning" = "Предупреждение";
+"Enable geolocation service in settings" = "Включите службу геолакации в настройках";
+"Cancel" = "Отмена";
+"Settings" = "Настройки";
+"You are too far \n from the Heart" = "Вы находитесь слишком \n далеко от Сердца";
+" meters" = " метров";
+" Caught!" = " Пойман!";
+"You are too far away \n from the monster" = "Вы находитесь слишком \n далеко от монстра";
+"You don't have hearts to catch the monster" = "У вас нет сердец,чтобы ловить монстра";
+"Go back to the map" = "Вернуться к карте";
+"The monster escaped" = "Монстр сбежал";
+"The monster struck" = "Монстр нанес удар";
+"In this game you need to catch monsters" = "В этой игре вам необходимо ловить монстров";
+"If you are within 100 meters of a monster, you can try to catch it" = "Если вы находитесь в радиусе 100 метров от монстра, вы можете попробовать его поймать";
+"The monster has the ability to Escape or Hit you." = "Монстр имеет возможность Убежать или Ударить вас.";
+"If a monster hits you, you lose one heart.If you don't have hearts, you can't catch a monster." = "Если монстр вас ударил,то вы теряете одно сердце.Если у вас нет сердец,вы не можете поймать монстра.";
+"Additional hearts can also be found on the map, collect them to increase the chance of catching the monster" = "Дополнительные сердца так же можно найти на карте,собирайте их,чтобы увеличить шанс поимки монстра";
+"Collect your collection of monsters.\nGood luck!" = "Соберите свою коллекцию монстров.\nУдачи!";
+"Next" = "Далее";
+"Back" = "Назад";
+"Privacy Policy" = "Политика Конфиденциальности";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
