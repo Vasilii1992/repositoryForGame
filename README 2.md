@@ -1,1 +1,0 @@
-This is a simple game where your task is to catch monsters on the map, but everything is complicated by the fact that monsters can only be caught within a radius of 100 meters from you and the monster can just run away.Monsters are updated on the map every 5 minutes.Assemble your team of monsters.
