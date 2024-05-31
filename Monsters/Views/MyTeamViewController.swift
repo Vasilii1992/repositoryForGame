@@ -5,7 +5,7 @@ import UIKit
 import Lottie
 
 
-class MyTeamViewController: UIViewController {
+final class MyTeamViewController: UIViewController {
 
     var capturedMonsters: [Monster] = []
     let backgroundImage: UIImageView = {
@@ -32,7 +32,6 @@ class MyTeamViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         let color = #colorLiteral(red: 0.005047614221, green: 0.1637888849, blue: 0.09214615077, alpha: 1)
         navigationController?.navigationBar.barTintColor = color
-     //   navigationController?.navigationBar.alpha = 0.9
 
         animationView = .init(name: "movement")
         animationView.loopMode = .loop
@@ -59,12 +58,10 @@ class MyTeamViewController: UIViewController {
 
     }
     private func setupConstraints() {
-          tableView.translatesAutoresizingMaskIntoConstraints = false
-        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         
         notCaughtLabel.translatesAutoresizingMaskIntoConstraints = false
         animationView.translatesAutoresizingMaskIntoConstraints = false
-
 
           NSLayoutConstraint.activate([
               tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -72,13 +69,10 @@ class MyTeamViewController: UIViewController {
               tableView.topAnchor.constraint(equalTo: view.topAnchor),
               tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
               
-              
-              
               notCaughtLabel.heightAnchor.constraint(equalToConstant: 148),
               notCaughtLabel.widthAnchor.constraint(equalToConstant: 344),
               notCaughtLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
               notCaughtLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -350),
-              
               
               animationView.heightAnchor.constraint(equalToConstant: 500),
               animationView.widthAnchor.constraint(equalToConstant: 500),
@@ -94,7 +88,6 @@ extension MyTeamViewController: UITableViewDelegate,UITableViewDataSource {
         90
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      //  return capturedMonsters.count
         if capturedMonsters.isEmpty {
             return 0
                 } else {
@@ -111,7 +104,6 @@ extension MyTeamViewController: UITableViewDelegate,UITableViewDataSource {
             cell.titleLabel.textColor = .white
             cell.subtitleLabel.textColor = .white
             cell.backgroundColor = .clear
-            // чтобы не подсвечивал ячейку
             cell.selectionStyle = .none
 
             return cell

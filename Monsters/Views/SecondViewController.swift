@@ -4,16 +4,13 @@ import Foundation
 import UIKit
 import CoreLocation
 import Lottie
-class SecondViewController: UIViewController {
+
+final class SecondViewController: UIViewController {
     
     let animation = LottieAnimationView(name: "permission")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-//        backgroundImage.image = UIImage(named: "backForSecondVC")
-//        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-//        view.addSubview(backgroundImage)
         
         view.backgroundColor = .white
         

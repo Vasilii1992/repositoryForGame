@@ -1,9 +1,4 @@
-//
-//  MapViewExtentions.swift
-//  Monsters
-//
-//  Created by Василий Тихонов on 17.04.2023.
-//
+
 
 import UIKit
 import MapKit
@@ -92,14 +87,9 @@ extension MapViewController {
             myTeamButton.widthAnchor.constraint(equalToConstant: 344),
             myTeamButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             myTeamButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -15),
-            
-       
-            
+               
           ])
       }
-    
-    
-    
-    
+   
 }
 

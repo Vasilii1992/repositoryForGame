@@ -6,7 +6,7 @@ import MapKit
 import CoreGraphics
 import Lottie
 
-class CatchViewController: UIViewController {
+final class CatchViewController: UIViewController {
 
     weak var delegate: MonsterCaptureDelegate?
     var monster: Monster
@@ -33,8 +33,6 @@ class CatchViewController: UIViewController {
         return label
     }()
 
-
-    
     init(monster: Monster, heartViews: [LottieAnimationView]) {
            self.monster = monster
            self.heartViews = heartViews
@@ -44,8 +42,7 @@ class CatchViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-
+    
     override func viewDidLoad() {
 
         super.viewDidLoad()
@@ -61,11 +58,8 @@ class CatchViewController: UIViewController {
         setupConstraints()
         
         heartConstrains()
-
-
     }
     
-    // отображение сердец на экране
     func heartConstrains() {
         for (index, heartView) in heartViews.enumerated() {
             heartView.translatesAutoresizingMaskIntoConstraints = false
@@ -111,7 +105,6 @@ class CatchViewController: UIViewController {
             
         } else if array[randomIndex] == 4 {
             self.monsterNameLabel.alpha = 0.0
-         //   self.imageViewForAnimation.alpha = 1.0
             let originalFrame = imageView.frame
             let finalFrame = CGRect(x: imageView.frame.origin.x + imageView.frame.width / 2.0,
                                     y: imageView.frame.origin.y + imageView.frame.height / 2.0,
@@ -119,7 +112,6 @@ class CatchViewController: UIViewController {
                                     height: 0)
             
             imageView.contentMode = .scaleAspectFill
-            // спорный код про анимацию , почему то монстер не исчезает сразу
             UIView.animate(withDuration: 2.0, animations: {
                 self.imageViewForAnimation.alpha = 1.0
             }) { _ in
@@ -166,7 +158,6 @@ class CatchViewController: UIViewController {
             })
             
             NSLayoutConstraint.activate([
-                
                 
                 imageView.widthAnchor.constraint(equalToConstant: 100),
                 imageView.heightAnchor.constraint(equalToConstant: 100),
@@ -253,9 +244,6 @@ class CatchViewController: UIViewController {
         }
     }
 
-    
-    
-    
     @objc func returnToMapButtonTapped() {
         self.navigationController?.popViewController(animated: true)
     }

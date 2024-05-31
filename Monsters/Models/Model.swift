@@ -13,7 +13,7 @@ struct Monster: Equatable,Encodable,Decodable {
     let backgraund: String
 }
 
-class MonsterAnnotation: MKPointAnnotation {
+final class MonsterAnnotation: MKPointAnnotation {
     let monster: Monster
 
     init(monster: Monster) {
@@ -54,26 +54,3 @@ var monsters = [
 
 ]
 
-
-
-// создание сердец рядом с монстром
-//    private func addHearts(to annotationView: MKAnnotationView, count: Int) {
-//
-//            let animationWidth: CGFloat = 30
-//            let animationHeight: CGFloat = 30
-//            let animationView = LottieAnimationView(name: "heartPoint")
-//            animationView.frame = CGRect(x: -animationWidth/2, y: -animationHeight/2, width: animationWidth, height: animationHeight)
-//            annotationView.addSubview(animationView)
-//            annotationView.frame = annotationView.frame.offsetBy(dx: 0, dy: -animationHeight/2)
-//            var delay: Double = 0
-//            for _ in 0..<count {
-//                animationView.play(fromProgress: 0, toProgress: 1, loopMode: .loop, completion: nil)
-//                animationView.play()
-//                animationView.alpha = 0
-//                UIView.animate(withDuration: 0.5, delay: delay, options: [.curveEaseInOut], animations: {
-//                    animationView.alpha = 1
-//                }, completion: nil)
-//                delay += 0.25
-//            }
-//        }
-//
