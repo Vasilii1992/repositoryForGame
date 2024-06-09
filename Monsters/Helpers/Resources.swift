@@ -4,13 +4,7 @@ import UIKit
 import Lottie
 
 enum Resources {
-    
-    /*
 
-     
-     
-     */
-    
     enum MonsterName {
         
         static var soulrender  = "Soulrender"
@@ -73,11 +67,6 @@ enum Resources {
         static var shadowspire = "monster22"
         static var gloomfang   = "monster23"
 
-
-
-
-
-
     }
     
     enum MonsterBackgraund {
@@ -105,11 +94,7 @@ enum Resources {
         static var craggnar    = "picture27"
         static var shadowspire = "picture28"
         static var gloomfang   = "picture29"
-
-
-
-        
-        
+   
     }
     
     enum Identifiers {
@@ -173,7 +158,6 @@ enum Resources {
         static var questionButtonNext = "Next".localized()
         static var questionButtonBack = "Back".localized()
         static var privacyPolicy = "Privacy Policy".localized()
-
 
     }
 }

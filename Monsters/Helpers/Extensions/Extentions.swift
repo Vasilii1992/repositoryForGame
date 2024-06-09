@@ -52,6 +52,16 @@ extension UIButton {
         self.clipsToBounds = true
         self.layer.masksToBounds = false
     }
+    
+    func questionButton() {
+        self.setTitleColor(.systemBlue, for: .normal)
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
+        self.layer.shadowRadius = 8
+        self.layer.shadowOpacity = 0.5
+        self.clipsToBounds = true
+        self.layer.masksToBounds = false }
+    
 }
 
 
