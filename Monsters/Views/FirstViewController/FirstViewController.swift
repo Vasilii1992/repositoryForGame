@@ -9,7 +9,7 @@ class FirstViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     let color = #colorLiteral(red: 0.9712495208, green: 0.9563626647, blue: 0.9220876098, alpha: 1)
-    let animation = LottieAnimationView(name: "monsters")
+    let animation = LottieAnimationView(name: Resources.LottieAnimationView.monsters)
 
     
     override func viewDidLoad() {

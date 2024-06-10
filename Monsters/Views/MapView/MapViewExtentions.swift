@@ -2,8 +2,6 @@
 
 import UIKit
 import MapKit
-import CoreLocation
-import Lottie
 
 extension MapViewController {
 

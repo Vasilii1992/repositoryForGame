@@ -1,8 +1,5 @@
 
 import UIKit
-import MapKit
-import CoreLocation
-import Lottie
 
 final class Alert  {
 

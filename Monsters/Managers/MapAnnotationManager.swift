@@ -1,23 +1,24 @@
-//
-//  MapAnnotationManager.swift
-//  Monsters
-//
-//  Created by Василий Тихонов on 09.06.2024.
-//
 
-import Foundation
 import MapKit
 
 class MapAnnotationManager {
+    
     private let mapView: MKMapView
     private let locationManager: CLLocationManager
     private let regionInMeters: Double
+    var timer: Timer?
 
     init(mapView: MKMapView, locationManager: CLLocationManager, regionInMeters: Double) {
         self.mapView = mapView
         self.locationManager = locationManager
         self.regionInMeters = regionInMeters
     }
+    
+     func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 100, repeats: true) { [weak self] _ in
+            self?.updateAnnotations()
+            }
+        }
 
     func addHeartAnnotations(with heartImage: UIImage?) {
         guard let currentLocation = locationManager.location else { return }
@@ -28,9 +29,9 @@ class MapAnnotationManager {
             let randomLongitude = currentLocation.coordinate.longitude + longitudeOffset
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: randomLatitude, longitude: randomLongitude)
-            annotation.title = "Heart"
+            annotation.title = Resources.AnnotationTitle.heart
             mapView.addAnnotation(annotation)
-            let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "heart")
+            let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: Resources.ImageForDisplay.heart)
             annotationView.image = heartImage
             mapView.addAnnotation(annotationView.annotation!)
         }

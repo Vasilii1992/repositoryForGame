@@ -38,6 +38,10 @@
 		6BA5236529CE086B00D321B5 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5236429CE086B00D321B5 /* CustomTableViewCell.swift */; };
 		6BA5236729D1D68800D321B5 /* CatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA5236629D1D68800D321B5 /* CatchViewController.swift */; };
 		6BA690512B4EEC4C0000E503 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BA690532B4EEC4C0000E503 /* InfoPlist.strings */; };
+		6BC0CFF02C16EAA0007E0030 /* CatchViewController + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC0CFEF2C16EAA0007E0030 /* CatchViewController + Extentions.swift */; };
+		6BC0CFF22C16ED15007E0030 /* CatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC0CFF12C16ED15007E0030 /* CatchManager.swift */; };
+		6BC0CFF52C16EE53007E0030 /* QuestionViewController + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC0CFF42C16EE53007E0030 /* QuestionViewController + Extentions.swift */; };
+		6BC0CFF82C16F00E007E0030 /* MyTeamVC+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC0CFF72C16F00E007E0030 /* MyTeamVC+Extentions.swift */; };
 		6BFF4A022A30AEAA00945945 /* question-mark.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF4A012A30AEAA00945945 /* question-mark.json */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +81,10 @@
 		6BA5236629D1D68800D321B5 /* CatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchViewController.swift; sourceTree = "<group>"; };
 		6BA690522B4EEC4C0000E503 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6BA690542B4EEC4F0000E503 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6BC0CFEF2C16EAA0007E0030 /* CatchViewController + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatchViewController + Extentions.swift"; sourceTree = "<group>"; };
+		6BC0CFF12C16ED15007E0030 /* CatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchManager.swift; sourceTree = "<group>"; };
+		6BC0CFF42C16EE53007E0030 /* QuestionViewController + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionViewController + Extentions.swift"; sourceTree = "<group>"; };
+		6BC0CFF72C16F00E007E0030 /* MyTeamVC+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyTeamVC+Extentions.swift"; sourceTree = "<group>"; };
 		6BFF4A012A30AEAA00945945 /* question-mark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "question-mark.json"; sourceTree = "<group>"; };
 		7246123C06FCAF49709F157A /* Pods-Monsters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monsters.release.xcconfig"; path = "Target Support Files/Pods-Monsters/Pods-Monsters.release.xcconfig"; sourceTree = "<group>"; };
 		EF280C30F94A4B687CF21017 /* Pods-Monsters.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monsters.debug.xcconfig"; path = "Target Support Files/Pods-Monsters/Pods-Monsters.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				6B29579A29CDE44200681CCF /* Extensions */,
-				6B6035FA29D34148009315E8 /* Resources.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -144,6 +151,7 @@
 			children = (
 				6B331E1929DDE4C50092A206 /* Animations */,
 				6B2FE0D729C8C8F700924BD4 /* Application */,
+				6BC0CFFC2C17126D007E0030 /* Managers */,
 				6BA5236229CDFDA600D321B5 /* Views */,
 				6BA5236829D1E11800D321B5 /* Cells */,
 				6BA5236329CDFDC300D321B5 /* Models */,
@@ -191,18 +199,13 @@
 		6BA5236229CDFDA600D321B5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6B941D7A2C15DF8B00C06BAC /* MapViewProtocol.swift */,
-				6B941D7C2C15DFDE00C06BAC /* HeartManager.swift */,
-				6B941D7E2C15FB2000C06BAC /* MapAnnotationManager.swift */,
-				6B2FE0C729C8C5F700924BD4 /* MapViewController.swift */,
-				6B83BE4E29EDCF2600453A91 /* MapViewExtentions.swift */,
-				6B2ECF222C09C4E400E122A5 /* MapViewControllerExtensions.swift */,
-				6BA5236629D1D68800D321B5 /* CatchViewController.swift */,
-				6B8EFE4B2A177C9400B055B2 /* QuestionViewController.swift */,
+				6BC0CFEE2C16E9EC007E0030 /* MapView */,
+				6BC0CFF32C16EE07007E0030 /* CatchView */,
+				6BC0CFF62C16EF57007E0030 /* QuestionView */,
+				6BC0CFF92C16F0BA007E0030 /* MyTeamView */,
+				6BC0CFFA2C16F0D8007E0030 /* FirstViewController */,
+				6BC0CFFB2C16F0E7007E0030 /* SecondViewController */,
 				6B83BE5229EDDF6200453A91 /* Alert.swift */,
-				6B29579829CDE06500681CCF /* MyTeamViewController.swift */,
-				6B29579429CCB48D00681CCF /* FirstViewController.swift */,
-				6B29579629CCBD2A00681CCF /* SecondViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				6BA5236029CDFC7D00D321B5 /* Model.swift */,
+				6B6035FA29D34148009315E8 /* Resources.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,6 +225,70 @@
 				6BA5236429CE086B00D321B5 /* CustomTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		6BC0CFEE2C16E9EC007E0030 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				6B941D7A2C15DF8B00C06BAC /* MapViewProtocol.swift */,
+				6B2FE0C729C8C5F700924BD4 /* MapViewController.swift */,
+				6B83BE4E29EDCF2600453A91 /* MapViewExtentions.swift */,
+				6B2ECF222C09C4E400E122A5 /* MapViewControllerExtensions.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		6BC0CFF32C16EE07007E0030 /* CatchView */ = {
+			isa = PBXGroup;
+			children = (
+				6BA5236629D1D68800D321B5 /* CatchViewController.swift */,
+				6BC0CFEF2C16EAA0007E0030 /* CatchViewController + Extentions.swift */,
+			);
+			path = CatchView;
+			sourceTree = "<group>";
+		};
+		6BC0CFF62C16EF57007E0030 /* QuestionView */ = {
+			isa = PBXGroup;
+			children = (
+				6B8EFE4B2A177C9400B055B2 /* QuestionViewController.swift */,
+				6BC0CFF42C16EE53007E0030 /* QuestionViewController + Extentions.swift */,
+			);
+			path = QuestionView;
+			sourceTree = "<group>";
+		};
+		6BC0CFF92C16F0BA007E0030 /* MyTeamView */ = {
+			isa = PBXGroup;
+			children = (
+				6BC0CFF72C16F00E007E0030 /* MyTeamVC+Extentions.swift */,
+				6B29579829CDE06500681CCF /* MyTeamViewController.swift */,
+			);
+			path = MyTeamView;
+			sourceTree = "<group>";
+		};
+		6BC0CFFA2C16F0D8007E0030 /* FirstViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6B29579429CCB48D00681CCF /* FirstViewController.swift */,
+			);
+			path = FirstViewController;
+			sourceTree = "<group>";
+		};
+		6BC0CFFB2C16F0E7007E0030 /* SecondViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6B29579629CCBD2A00681CCF /* SecondViewController.swift */,
+			);
+			path = SecondViewController;
+			sourceTree = "<group>";
+		};
+		6BC0CFFC2C17126D007E0030 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				6B941D7E2C15FB2000C06BAC /* MapAnnotationManager.swift */,
+				6BC0CFF12C16ED15007E0030 /* CatchManager.swift */,
+				6B941D7C2C15DFDE00C06BAC /* HeartManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		7233BF20C6F4208DDF5C9643 /* Pods */ = {
@@ -361,8 +429,11 @@
 				6BA5236529CE086B00D321B5 /* CustomTableViewCell.swift in Sources */,
 				6B941D7B2C15DF8B00C06BAC /* MapViewProtocol.swift in Sources */,
 				6B2FE0C829C8C5F700924BD4 /* MapViewController.swift in Sources */,
+				6BC0CFF22C16ED15007E0030 /* CatchManager.swift in Sources */,
 				6B83BE5329EDDF6200453A91 /* Alert.swift in Sources */,
 				6B2FE0C429C8C5F700924BD4 /* AppDelegate.swift in Sources */,
+				6BC0CFF82C16F00E007E0030 /* MyTeamVC+Extentions.swift in Sources */,
+				6BC0CFF02C16EAA0007E0030 /* CatchViewController + Extentions.swift in Sources */,
 				6B83BE4F29EDCF2600453A91 /* MapViewExtentions.swift in Sources */,
 				6B2FE0C629C8C5F700924BD4 /* SceneDelegate.swift in Sources */,
 				6B29579929CDE06500681CCF /* MyTeamViewController.swift in Sources */,
@@ -371,6 +442,7 @@
 				6B941D7D2C15DFDE00C06BAC /* HeartManager.swift in Sources */,
 				6BA5236729D1D68800D321B5 /* CatchViewController.swift in Sources */,
 				6B2ECF232C09C4E400E122A5 /* MapViewControllerExtensions.swift in Sources */,
+				6BC0CFF52C16EE53007E0030 /* QuestionViewController + Extentions.swift in Sources */,
 				6B8EFE4C2A177C9400B055B2 /* QuestionViewController.swift in Sources */,
 				6B6035FB29D34148009315E8 /* Resources.swift in Sources */,
 				6B29579D29CDE48900681CCF /* Extentions.swift in Sources */,

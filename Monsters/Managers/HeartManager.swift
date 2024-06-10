@@ -4,17 +4,24 @@ import UIKit
 import Lottie
 
 class HeartManager {
-    var heartViews = [LottieAnimationView]()
-    var heartCount: Int
     
-    init(heartCount: Int) {
-        self.heartCount = heartCount
+    static let shared = HeartManager()
+
+    var heartViews = [LottieAnimationView]()
+    var heartCount: Int {
+        didSet {
+            UserDefaults.standard.set(heartCount, forKey: Resources.KeyForUserDefaults.heartCount)
+        }
+    }
+    
+    private init() {
+        heartCount = UserDefaults.standard.integer(forKey: Resources.KeyForUserDefaults.heartCount)
         createHeartForDisplay()
     }
     
     func createHeartForDisplay() {
         for _ in 0..<heartCount {
-            let heartView = LottieAnimationView(name: "heartFull")
+            let heartView = LottieAnimationView(name: Resources.ImageForDisplay.heartFull)
             heartView.play()
             heartViews.append(heartView)
         }
@@ -47,7 +54,7 @@ class HeartManager {
                     ])
                 }
             } else {
-                let newHeartView = LottieAnimationView(name: "heartFull")
+                let newHeartView = LottieAnimationView(name: Resources.ImageForDisplay.heartFull)
                 newHeartView.play()
                 
                 let lastHeartView = heartViews.last ?? UIView()
@@ -65,7 +72,7 @@ class HeartManager {
                let heartView = heartViews.removeLast()
                heartView.removeFromSuperview()
                heartCount -= 1
-               UserDefaults.standard.set(heartCount, forKey: "heartCount")
+               UserDefaults.standard.set(heartCount, forKey: Resources.KeyForUserDefaults.heartCount)
            }
        }
        
@@ -74,12 +81,12 @@ class HeartManager {
                let lastHeartView = heartViews.removeLast()
                lastHeartView.removeFromSuperview()
                heartCount -= 1
-               UserDefaults.standard.set(heartCount, forKey: "heartCount")
+               UserDefaults.standard.set(heartCount, forKey: Resources.KeyForUserDefaults.heartCount)
            }
        }
        
        func addHeart(in view: UIView) {
-           let newHeartView = LottieAnimationView(name: "heartFull")
+           let newHeartView = LottieAnimationView(name: Resources.ImageForDisplay.heartFull)
            newHeartView.play()
            
            let lastHeartView = heartViews.last ?? UIView()
@@ -91,9 +98,8 @@ class HeartManager {
            view.addSubview(newHeartView)
            
            heartCount += 1
-           UserDefaults.standard.set(heartCount, forKey: "heartCount")
+           UserDefaults.standard.set(heartCount, forKey: Resources.KeyForUserDefaults.heartCount)
            
            updateHeartViewConstraints(in: view)
        }
-    
 }

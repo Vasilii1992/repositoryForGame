@@ -10,11 +10,9 @@ final class MapViewController: UIViewController,MonsterCaptureDelegate {
 
     var heartManager: HeartManager!
     var annotationManager: MapAnnotationManager!
-
-
     var heartCount = 3
-        
-    let heartView = UIImage(named: "heart")
+    
+    let heartView = UIImage(named: Resources.ImageForDisplay.heart)
     
     var mapView = MKMapView()
     var capturedMonsters: [Monster] = [] {
@@ -23,7 +21,7 @@ final class MapViewController: UIViewController,MonsterCaptureDelegate {
             myTeamViewController?.tableView.reloadData()
             let userDefaults = UserDefaults.standard
             let encodedData = try? JSONEncoder().encode(capturedMonsters)
-            userDefaults.set(encodedData, forKey: "capturedMonsters")
+            userDefaults.set(encodedData, forKey: Resources.KeyForUserDefaults.capturedMonsters)
         }
     }
     
@@ -32,7 +30,7 @@ final class MapViewController: UIViewController,MonsterCaptureDelegate {
     weak var myTeamViewController: MyTeamViewController?
     weak var catchViewContriller: CatchViewController?
      var currentCoordinate: CLLocationCoordinate2D?
-    private var timer: Timer?
+
     let zoomInButton = UIButton()
     let zoomOutButton = UIButton()
     let locationButton = UIButton()
@@ -40,18 +38,18 @@ final class MapViewController: UIViewController,MonsterCaptureDelegate {
     let questionButton = UIButton()
     
     let animationPoint: LottieAnimationView = {
-        let animation = LottieAnimationView(name: "pointGreen")
+        let animation = LottieAnimationView(name: Resources.LottieAnimationView.pointGreen)
         animation.contentMode = .scaleAspectFit
         return animation
     }()
     
     let questionMark: LottieAnimationView = {
-        let animation = LottieAnimationView(name: "question-mark")
+        let animation = LottieAnimationView(name: Resources.LottieAnimationView.questionMark)
         animation.contentMode = .scaleAspectFit
         return animation
     }()
     let heartViewAnimate: LottieAnimationView = {
-        let animation = LottieAnimationView(name: "heartPoint")
+        let animation = LottieAnimationView(name: Resources.LottieAnimationView.heartPoint)
         animation.contentMode = .scaleAspectFit
         return animation
     }()
@@ -63,19 +61,10 @@ final class MapViewController: UIViewController,MonsterCaptureDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userDefaults()
 
-        if let savedHeartCount = UserDefaults.standard.value(forKey: "heartCount") as? Int {
-            heartCount = savedHeartCount
-        }
-
-       
-         let userDefaults = UserDefaults.standard
-         if let savedData = userDefaults.object(forKey: "capturedMonsters") as? Data,
-            let decodedData = try? JSONDecoder().decode([Monster].self, from: savedData) {
-             capturedMonsters = decodedData
-         }
-
-        heartManager = HeartManager(heartCount: heartCount)
+        heartManager = HeartManager.shared
         annotationManager = MapAnnotationManager(mapView: mapView, locationManager: locationManager, regionInMeters: regionInMeters)
 
         heartManager.updateHeartViewConstraints(in: view)
@@ -87,22 +76,29 @@ final class MapViewController: UIViewController,MonsterCaptureDelegate {
         setupConstraints()
         mapView.delegate = self
         mapView.userLocation.title = Resources.Strings.userLocationTitle
-        startTimer()
+        annotationManager.startTimer()
     }
-
     
-    private func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 300, repeats: true) { [weak self] _ in
-            self?.annotationManager.updateAnnotations()
-            }
-        }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         checkLocationAuthorization()
 
         heartManager.updateHeartViewConstraints(in: view)
         
+    }
+    
+    func userDefaults() {
+        
+        if let savedHeartCount = UserDefaults.standard.value(forKey: Resources.KeyForUserDefaults.heartCount) as? Int {
+            heartCount = savedHeartCount
+        }
+
+       
+         let userDefaults = UserDefaults.standard
+        if let savedData = userDefaults.object(forKey: Resources.KeyForUserDefaults.capturedMonsters) as? Data,
+            let decodedData = try? JSONDecoder().decode([Monster].self, from: savedData) {
+             capturedMonsters = decodedData
+         }
     }
     
 

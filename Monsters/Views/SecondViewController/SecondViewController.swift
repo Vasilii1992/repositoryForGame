@@ -7,7 +7,7 @@ import Lottie
 
 final class SecondViewController: UIViewController {
     
-    let animation = LottieAnimationView(name: "permission")
+    let animation = LottieAnimationView(name: Resources.LottieAnimationView.permission)
 
     override func viewDidLoad() {
         super.viewDidLoad()

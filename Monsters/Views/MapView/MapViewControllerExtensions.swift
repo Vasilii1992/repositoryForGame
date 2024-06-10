@@ -12,10 +12,8 @@ extension MapViewController: CLLocationManagerDelegate {
 
         if currentCoordinate == nil {
             centerViewOnUserLocation()
-         //   addHeartAnnotations()
             annotationManager.addHeartAnnotations(with: heartView)
             annotationManager.addAnnotation(with: 30)
-          //  addAnnotation(with: 30)
         }
         currentCoordinate = location.coordinate
     }
@@ -67,7 +65,7 @@ extension MapViewController: MKMapViewDelegate {
             let heartLocation = CLLocation(latitude: view.annotation!.coordinate.latitude, longitude: view.annotation!.coordinate.longitude)
             let distance = userLocation.distance(from: heartLocation)
             //MARK: расстояние
-            if distance <= 800 {
+            if distance <= 500 {
                 addHeart()
                 mapView.removeAnnotation(view.annotation!)
             } else {
@@ -96,7 +94,7 @@ extension MapViewController: MKMapViewDelegate {
                 let monsterLocation = CLLocation(latitude: monsterAnnotation.coordinate.latitude, longitude: monsterAnnotation.coordinate.longitude)
                 let distance = userLocation.distance(from: monsterLocation)
                 //MARK: расстояние
-                if distance <= 600 {
+                if distance <= 500 {
                     let newVC = CatchViewController(monster: monsterAnnotation.monster, heartViews: heartManager.heartViews)
                     newVC.delegate = self
                     newVC.monster = monsterAnnotation.monster

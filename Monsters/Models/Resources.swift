@@ -125,7 +125,7 @@ enum Resources {
     
     enum Alert {
         
-        static var cancel = "Cancel".localized()
+        static var cancel   = "Cancel".localized()
         static var settings = "Settings".localized()
     }
     
@@ -160,4 +160,36 @@ enum Resources {
         static var privacyPolicy = "Privacy Policy".localized()
 
     }
+    
+    enum ImageForDisplay {
+        
+        static let heartFull = "heartFull"
+        static let heart     = "heart"
+        static let myTeamBC  = "myTeamBC"
+        static let questionBackgraund2 = "questionBackgraund2"
+        
+    }
+    
+    enum LottieAnimationView {
+        
+        static let pointGreen   = "pointGreen"
+        static let questionMark = "question-mark"
+        static let heartPoint   = "heartPoint"
+        static let movement     = "movement"
+        static let monsters     = "monsters"
+        static let permission   = "permission"
+    }
+    
+    
+    enum KeyForUserDefaults {
+        
+        static let heartCount       = "heartCount"
+        static let capturedMonsters = "capturedMonsters"
+    }
+    
+    enum AnnotationTitle {
+        
+        static let heart = "Heart"
+    }
+    
 }
